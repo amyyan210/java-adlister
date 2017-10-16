@@ -8,8 +8,14 @@ import java.io.PrintWriter;
 @WebServlet(name = "SumServlet", urlPatterns = "/sum")
 public class Sum extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int a = 0;
+        int b = 0;
+
+        a = Integer.parseInt(request.getParameter("a"));
+        b = Integer.parseInt(request.getParameter("b"));
+
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h3>Sum: " + (1 + 2) + "</h3>");
+        out.println("<h3>Sum: " + (a + b) + "</h3>");
     }
 }
