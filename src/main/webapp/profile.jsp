@@ -14,7 +14,7 @@
 <body>
 <%@ include file="partials/nav-bar.jsp"%>
 
-
+<h2 class="text-center">Your Profile</h2>
 
 <%@ include file="partials/scripts.jsp"%>
 </body>
