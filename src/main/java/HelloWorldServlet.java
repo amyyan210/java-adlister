@@ -9,10 +9,11 @@ public class HelloWorldServlet extends HttpServlet {
 
         String name = req.getParameter("name");
 
-        res.setContentType("text/html");
+        res.setContentType("text/html"); //is of this type automatically, so is optional
+
         PrintWriter out = res.getWriter();
 
-        if (name != null) {
+        if (name != null || name.trim().isEmpty()) {
             out.println("<h1>Hello, " + name + "!</h1>");
         }  else {
             out.println("<h1>Hello, world!</h1>");
