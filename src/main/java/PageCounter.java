@@ -7,20 +7,20 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "CountServlet", urlPatterns = "/count")
 public class PageCounter extends HttpServlet {
-    int pageCount = 0;
+    int counter = 0;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
 
-        String count = req.getParameter("count");
+        String reset = req.getParameter("reset");
 
-        if (count != "") {
-            out.println("Page views: " + pageCount);
+        if (reset != null) {
+            out.println("<h2>Page views: " + counter + "</h2>");
+            counter = 0;
         } else {
-            out.println("Page views: 0");
+            out.println("<h2>Page views: " + counter + "</h2>");
         }
-
-        pageCount++;
+        counter++;
     }
 }
